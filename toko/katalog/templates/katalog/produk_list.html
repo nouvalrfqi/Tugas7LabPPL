@@ -1,0 +1,18 @@
+{% extends 'katalog/base.html' %}
+
+{% block content %}
+<h2>Daftar Produk</h2>
+<div class="produk-container">
+    {% for produk in produk_list %}
+        <div class="produk-card">
+            <img src="/static/katalog/images/{{ produk.gambar }}" alt="{{ produk.nama }}">
+            <h3>{{ produk.nama }}</h3>
+            <p>{{ produk.deskripsi }}</p>
+            <p>Harga: Rp {{ produk.harga }}</p>
+            <a href="/produk/{{ produk.id }}/" class="detail-button">Detail Produk</a>
+        </div>
+    {% empty %}
+        <p>Tidak ada produk yang tersedia</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'katalog/base.html' %}
+
+{% block content %}
+<h2>{{ produk.nama }}</h2>
+<p>{{ produk.deskripsi }}</p>
+<p>Harga: Rp {{ produk.harga }}</p>
+<a href="/produk/">Kembali ke Daftar Produk</a>
+{% endblock %}
